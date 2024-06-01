@@ -1,0 +1,24 @@
+{
+  "name": "goyshop",
+  "version": "11.8.0",
+  "license": "MIT",
+  "private": true,
+  "author": "Temuujin",
+  "workspaces": [
+    "admin/*",
+    "shop"
+  ],
+  "scripts": {
+    "clean": "yarn workspaces run rimraf \"{.next,node_modules,__generated__,.cache,src/graphql/*.d.ts,src/framework/graphql/**/*.d.ts}\" && rimraf node_modules",
+    "dev:shop-rest": "yarn workspace @goyshop/shop dev:rest",
+    "build:shop-rest": "yarn workspace @goyshop/shop build:rest",
+    "start:shop-rest": "yarn workspace @goyshop/shop start",
+    "dev:admin-rest": "yarn workspace @marvel/admin-rest dev",
+    "build:admin-rest": "yarn workspace @marvel/admin-rest build",
+    "start:admin-rest": "yarn workspace @marvel/admin-rest start"
+  },
+  "devDependencies": {
+    "prettier": "2.4.0",
+    "rimraf": "3.0.2"
+  }
+}
